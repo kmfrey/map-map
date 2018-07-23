@@ -19,7 +19,7 @@ class CountryHandler(webapp2.RequestHandler):
         country.name = self.request.get('name')
         country.policies = self.request.get('policies')
         country.culture = self.request.get('culture')
-        if self.request.get('english') == "True"
+        if self.request.get('english') == "True":
             country.english = True
         else:
             country.english = False
@@ -31,8 +31,14 @@ class CountryHandler(webapp2.RequestHandler):
             "english" : country.english,
         })
         self.response.write(html)
+class FormHandler(webapp2.RequestHandler):
+    def get(self):
+        form_template = jinja_env.get_template("template/form.html")
+        html = form_template.render()
+        self.response.write(html)
 
-app webapp2.WSGIApplication([
+app = webapp2.WSGIApplication([
     ('/', MapHandler),
     ('/%s' % country, CountryHandler)
+    ('/form', FormHandler)
 ])
