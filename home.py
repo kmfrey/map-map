@@ -3,7 +3,7 @@ import jinja2
 import os
 import country
 
-jina_env = jinja2.Environment(
+jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 class MapHandler(webapp2.RequestHandler):
@@ -31,6 +31,7 @@ class CountryHandler(webapp2.RequestHandler):
             "english" : country.english,
         })
         self.response.write(html)
+
 class FormHandler(webapp2.RequestHandler):
     def get(self):
         form_template = jinja_env.get_template("template/form.html")
@@ -39,6 +40,6 @@ class FormHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MapHandler),
-    ('/%s' % country, CountryHandler)
-    ('/form', FormHandler)
+    ('/#%s' % country, CountryHandler),
+    ('/form', FormHandler),
 ])
