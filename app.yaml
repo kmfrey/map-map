@@ -1,0 +1,12 @@
+runtime: python27    # this is just telling that you're writing in python
+threadsafe: true   # handle more than one request at once
+
+handlers:
+- url: /static
+  static_dir: static
+- url: /.*
+  script: home.app
+
+libraries:
+- name: jinja2
+  version: latest
