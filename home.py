@@ -32,11 +32,11 @@ class CountryHandler(webapp2.RequestHandler):
         })
         self.response.write(html)
 
-class FormHandler(webapp2.RequestHandler):
-    def get(self):
-        form_template = jinja_env.get_template("template/form.html")
-        html = form_template.render()
-        self.response.write(html)
+# class FormHandler(webapp2.RequestHandler):
+#     def get(self):
+#         form_template = jinja_env.get_template("template/orm.html")
+#         html = form_template.render()
+#         self.response.write(html)
 
 app = webapp2.WSGIApplication([
     ('/', MapHandler),
