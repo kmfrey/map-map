@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+
+  <title>Interactive Map 2.0</title>
+
+
+  <link rel="stylesheet" href="/static/map2.css">
+
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://d3js.org/topojson.v1.min.js"></script>
+
+<script src = "/static/datamaps.world.min.js" > </script>
+<script src = "/static/datamap.js" > </script>
+
+</head>
+
+<body>
+<h1> Where are you traveling? </h1>
+ <div id="basic"></div>
+
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Countries</button>
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+    <a href="#Austria">Austria</a>
+    <a href="#Canada">Canada</a>
+    <a href="#Cuba">Cuba</a>
+    <a href="#Egypt">Egypt</a>
+    <a href="#Hungary">Hungary</a>
+    <a href="#Iran">Iran</a>
+    <a href="#Mexico">Mexico</a>
+    <a href="#Singapore">Singapore</a>
+    <a href="#USA">USA</a>
+  </div>
+</div>
+<script>
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>

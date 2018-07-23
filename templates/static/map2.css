@@ -1,4 +1,14 @@
+/*body {
 
+  background-image: url(http://mangdienthoai.com/wp-content/uploads/2018/03/bunch-ideas-of-world-map-with-country-names-printable-with-world-map-without-names-geographic-maps-of-world-map-with-country-names-printable.png);
+  background-size: cover;
+
+}
+*/
+
+body{
+  background-color: lightblue;
+}
 .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -6,6 +16,10 @@
     font-size: 16px;
     border: none;
     cursor: pointer;
+}
+
+#basic{
+
 }
 
 .dropbtn:hover, .dropbtn:focus {
