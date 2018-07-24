@@ -19,22 +19,17 @@
 
 <h1> Where are you traveling ? </h1>
 
-
-<div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Countries</button>
-  <div id="myDropdown" class="dropdown-content">
-    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-    <a href="#Austria">Austria</a>
-    <a href="#Canada">Canada</a>
-    <a href="#Cuba">Cuba</a>
-    <a href="#Egypt">Egypt</a>
-    <a href="#Hungary">Hungary</a>
-    <a href="#Iran">Iran</a>
-    <a href="#Mexico">Mexico</a>
-    <a href="#Singapore">Singapore</a>
-    <a href="#USA">USA</a>
-  </div>
-</div>
+<select name="list" id="list" accesskey="target">
+    <option value='none' selected>Choose a country</option>
+    <option value="country.html">Austria</option>
+    <option value="theme2.html"></option>
+    <option value="theme3.html"></option>
+    <option value="index.html">Austria</option>
+    <option value="index.html">Austria</option>
+    <option value="index.html">Austria</option>
+    <option value="index.html">Austria</option>
+    <option value="index.html">Austria</option>
+</select>
 <div id="basic"></div>
 <script>
 function myFunction() {
@@ -55,4 +50,11 @@ function filterFunction() {
     }
   }
 }
+function goToNewPage()
+    {
+        var url = document.getElementById('list').value;
+        if(url != 'none') {
+            window.location = url;
+        }
+    }
 </script>
