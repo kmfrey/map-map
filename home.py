@@ -5,8 +5,9 @@ import pycountry
 import requests
 
 #request = requests.get("https://www.reisewarnung.net/api", verify=False)
+
 jinja_env = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
+    loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 class MapHandler(webapp2.RequestHandler):
     def get(self):
