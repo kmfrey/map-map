@@ -16,7 +16,7 @@ class MapHandler(webapp2.RequestHandler):
 class CountryHandler(webapp2.RequestHandler):
     def get(self):
         country_template = jinja_env.get_template("templates/country.html")
-        name = "Iran"
+        country = "Iran"
         for i in range (0, 250):
             if pycountry.countries.name != name:
                 self.response.write("Country does not exist")
@@ -25,7 +25,7 @@ class CountryHandler(webapp2.RequestHandler):
         english = False
         #currency = pycountry.currency.name
         html = country_template.render({
-            "name" : name,
+            "name" : country,
             "policies" : policies,
             "culture" : culture,
             "english" : english,
@@ -37,7 +37,7 @@ class CountryHandler(webapp2.RequestHandler):
 #         form_template = jinja_env.get_template("template/orm.html")
 #         html = form_template.render()
 #         self.response.write(html)
-name = "Iran"
+country = "Iran"
 
 app = webapp2.WSGIApplication([
     ('/', MapHandler),
