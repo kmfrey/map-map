@@ -4,7 +4,7 @@ import os
 import pycountry
 import requests
 
-request = requests.get("https://www.reisewarnung.net/api")
+#request = requests.get("https://www.reisewarnung.net/api", verify=False)
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
@@ -18,19 +18,16 @@ class CountryHandler(webapp2.RequestHandler):
     def get(self):
         country_template = jinja_env.get_template("templates/country.html")
         country = "USA"
-        policies = "sysysy"
-        culture = "xxx"
         english = True
-        currency = pycountry.currency.name
+        currency = pycountry.currencies.get(numeric = "840")
         if country == "USA":
             warning = "N/A"
         # else:
         #     request.
         html = country_template.render({
             "name" : country,
-            "policies" : policies,
-            "culture" : culture,
             "english" : english,
+            "currency" : currency,
         })
         self.response.write(html)
 
@@ -39,10 +36,9 @@ class CountryHandler(webapp2.RequestHandler):
 #         form_template = jinja_env.get_template("template/orm.html")
 #         html = form_template.render()
 #         self.response.write(html)
-country = "USA"
 
 app = webapp2.WSGIApplication([
+    ('/USA', CountryHandler),
     ('/', MapHandler),
-    ('/#USA', CountryHandler),
     #('/form', FormHandler),
 ])

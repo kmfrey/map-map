@@ -19,42 +19,11 @@
 
 <h1> Where are you traveling ? </h1>
 
-<select name="list" id="list" accesskey="target">
-    <option value='none' selected>Choose a country</option>
-    <option value="country.html">Austria</option>
-    <option value="theme2.html"></option>
-    <option value="theme3.html"></option>
-    <option value="index.html">Austria</option>
-    <option value="index.html">Austria</option>
-    <option value="index.html">Austria</option>
-    <option value="index.html">Austria</option>
-    <option value="index.html">Austria</option>
-</select>
+<form action = "/USA">
+  <select name="country">
+  <option value = "">Choose a country</option>
+  <option value="USA">USA</option>
+  </select>
+  <input type="submit" value="See Information">
+</form>
 <div id="basic"></div>
-<script>
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-function filterFunction() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  div = document.getElementById("myDropdown");
-  a = div.getElementsByTagName("a");
-  for (i = 0; i < a.length; i++) {
-    if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-      a[i].style.display = "";
-    } else {
-      a[i].style.display = "none";
-    }
-  }
-}
-function goToNewPage()
-    {
-        var url = document.getElementById('list').value;
-        if(url != 'none') {
-            window.location = url;
-        }
-    }
-</script>
