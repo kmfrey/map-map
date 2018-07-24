@@ -41,6 +41,6 @@ country = "Iran"
 
 app = webapp2.WSGIApplication([
     ('/', MapHandler),
-    ('/#%s' % name, CountryHandler),
+    ('/#%s' % country, CountryHandler),
     #('/form', FormHandler),
 ])
