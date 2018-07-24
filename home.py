@@ -1,9 +1,10 @@
 import webapp2
 import jinja2
 import os
-
 import pycountry
+import requests
 
+request = requests.get("https://www.reisewarnung.net/api")
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
@@ -16,14 +17,15 @@ class MapHandler(webapp2.RequestHandler):
 class CountryHandler(webapp2.RequestHandler):
     def get(self):
         country_template = jinja_env.get_template("templates/country.html")
-        country = "Iran"
-        for i in range (0, 250):
-            if pycountry.countries.name != name:
-                self.response.write("Country does not exist")
+        country = "USA"
         policies = "sysysy"
         culture = "xxx"
-        english = False
-        #currency = pycountry.currency.name
+        english = True
+        currency = pycountry.currency.name
+        if country == "USA":
+            warning = "N/A"
+        # else:
+        #     request.
         html = country_template.render({
             "name" : country,
             "policies" : policies,
@@ -37,10 +39,10 @@ class CountryHandler(webapp2.RequestHandler):
 #         form_template = jinja_env.get_template("template/orm.html")
 #         html = form_template.render()
 #         self.response.write(html)
-country = "Iran"
+country = "USA"
 
 app = webapp2.WSGIApplication([
     ('/', MapHandler),
-    ('/#%s' % country, CountryHandler),
+    ('/#USA', CountryHandler),
     #('/form', FormHandler),
 ])
