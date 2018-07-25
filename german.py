@@ -1,9 +1,8 @@
 import requests
 import json
 import pycountry
-
-from requests_toolbelt.adapters import appengine
-appengine.monkeypatch()
+import requests_toolbelt.adapters.appengine
+requests_toolbelt.adapters.appengine.monkeypatch()
 
 
 r = requests.get("https://www.reisewarnung.net/api?country=US" # +alpha_2
@@ -11,7 +10,9 @@ r = requests.get("https://www.reisewarnung.net/api?country=US" # +alpha_2
 
 json = json.loads(r.text)
 
-print (json["data"]["situation"]["rating"])
+rating = (json["data"]["situation"]["rating"])
+warning = json["data"]["lang"]["en"]["advice"]
+learn_more = json["data"]["lang"]["en"]["url_details"]
 
 
 dolla = pycountry.currencies.get(name = "US Dollar")
