@@ -1,13 +1,13 @@
 import webapp2
 import jinja2
 import os
+import german
 import pycountry
-import requests
-
-#request = requests.get("https://www.reisewarnung.net/api", verify=False)
 
 jinja_env = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
+
+
 
 class MapHandler(webapp2.RequestHandler):
     def get(self):
@@ -18,16 +18,17 @@ class MapHandler(webapp2.RequestHandler):
 class CountryHandler(webapp2.RequestHandler):
     def get(self):
         country_template = jinja_env.get_template("templates/country.html")
-        country = "USA"
+        country = "United States"
         english = True
-        currency = pycountry.currencies.get(numeric = "840")
+        three = pycountry.countries.alpha_3.get(name = country)
+        two = pycountry.countries.alpha_2.get(name = country)
+        currency = pycountry.currencies.get(alpha_3 = three)
         if country == "USA":
             warning = "N/A"
-        # else:
-        #     request.
+        #else:
+        #   request.
         html = country_template.render({
             "name" : country,
-            "english" : english,
             "currency" : currency,
         })
         self.response.write(html)
