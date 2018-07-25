@@ -6,7 +6,8 @@
 
 }
 body {
-  background-image: /static/globe.png
+  background-image: url(globe.png) ;
+  background-size: cover;
 }
 h1{
   text-align: center;
