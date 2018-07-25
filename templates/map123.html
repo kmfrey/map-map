@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
   <meta charset="UTF-8">
 
@@ -12,49 +13,23 @@
 
 <script src = "../static/datamaps.world.min.js" > </script>
 <script src = "../static/datamap.js" > </script>
+<script src = "../static/goTo.js" > </script>
 
 </head>
 
 <body>
+  <select name="list" id="list" accesskey="target">
+    <option value='none' selected>Choose a country</option>
+    <option value="country.html">USA</option>
+    <option value="theme2.html">Theme 2</option>
+    <option value="theme3.html">Theme 3</option>
+    <option value="theme4.html">Cam is awesome</option>
+<select>
+<input type=button value="Go" onclick="goToNewPage()" />
+<body>
 
 <h1> Where are you traveling ? </h1>
 
-<select name="list" id="list" accesskey="target">
-    <option value='none' selected>Choose a country</option>
-    <option value="country.html">Austria</option>
-    <option value="theme2.html"></option>
-    <option value="theme3.html"></option>
-    <option value="index.html">Austria</option>
-    <option value="index.html">Austria</option>
-    <option value="index.html">Austria</option>
-    <option value="index.html">Austria</option>
-    <option value="index.html">Austria</option>
-</select>
 <div id="basic"></div>
-<script>
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-function filterFunction() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  div = document.getElementById("myDropdown");
-  a = div.getElementsByTagName("a");
-  for (i = 0; i < a.length; i++) {
-    if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-      a[i].style.display = "";
-    } else {
-      a[i].style.display = "none";
-    }
-  }
-}
-function goToNewPage()
-    {
-        var url = document.getElementById('list').value;
-        if(url != 'none') {
-            window.location = url;
-        }
-    }
-</script>
+<p> <a href="Form.html">Are we missing a country ? </a> </p>
+</html>
