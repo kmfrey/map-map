@@ -2,6 +2,10 @@ import requests
 import json
 import pycountry
 
+from requests_toolbelt.adapters import appengine
+appengine.monkeypatch()
+
+
 r = requests.get("https://www.reisewarnung.net/api?country=US" # +alpha_2
 , verify=False)
 
