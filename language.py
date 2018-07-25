@@ -1,4 +1,4 @@
-# user chooses language they want to translate to --> text is translated into language of country they are travelling to #
+# user inputs text --> the language text is written in is detected --> text is translated into language of country they are travelling to #
 import jinja2
 import os
 import webapp2
@@ -8,6 +8,7 @@ loader = jinja2.FileSystemLoader(os.path.dirname(__file__))
 
 from googletrans import Translator
 
+#this handler takes text -from translate.html- and gives it the variable "content" --> translator.translate will translate "content"
 class Translation(webapp2.RequestHandler):
     def get(self):
         translator = Translator()
@@ -15,6 +16,7 @@ class Translation(webapp2.RequestHandler):
         html = trans_template.render({
             "content" = self.request.get("content")
         })
+        # dest is a variable for the country's abbreviation
         translator.translate.(content, dest = #alpha_3 from pycountry)#find a way to import the text users input in translate.html#
 
 
