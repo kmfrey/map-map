@@ -1,29 +1,35 @@
 <!DOCTYPE html>
+<html>
 <head>
   <meta charset="UTF-8">
 
   <title>Interactive Map 2.0</title>
 
 
-  <link rel="stylesheet" href="/static/map2.css">
+  <link rel="stylesheet" href="../static/map2.css">
 
   <script src="https://d3js.org/d3.v3.min.js"></script>
   <script src="https://d3js.org/topojson.v1.min.js"></script>
 
-<script src = "/static/datamaps.world.min.js" > </script>
-<script src = "/static/datamap.js" > </script>
+<script src = "../static/datamaps.world.min.js" > </script>
+<script src = "../static/datamap.js" > </script>
+<script src = "../static/goTo.js" > </script>
 
 </head>
 
 <body>
+  <select name="list" id="list" accesskey="target">
+    <option value='none' selected>Choose a country</option>
+    <option value="country.html">USA</option>
+    <option value="theme2.html">Theme 2</option>
+    <option value="theme3.html">Theme 3</option>
+    <option value="theme4.html">Cam is awesome</option>
+<select>
+<input type=button value="Go" onclick="goToNewPage()" />
+<body>
 
 <h1> Where are you traveling ? </h1>
 
-<form action = "/USA">
-  <select name="country">
-  <option value = "">Choose a country</option>
-  <option value="USA">USA</option>
-  </select>
-  <input type="submit" value="See Information">
-</form>
 <div id="basic"></div>
+<p> <a href="Form.html">Are we missing a country ? </a> </p>
+</html>
