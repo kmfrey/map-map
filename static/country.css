@@ -1,0 +1,25 @@
+#map {
+  width: 30%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+
+}
+body {
+  background-image: /static/globe.png
+}
+h1{
+  text-align: center;
+  color: blue;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+p{
+  position:fixed;
+  bottom:0;
+  right:0;
+}
