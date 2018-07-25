@@ -24,13 +24,12 @@ class CountryHandler(webapp2.RequestHandler):
         three = pycountry.countries.alpha_3.get(name = country)
         two = pycountry.countries.alpha_2.get(name = country)
         currency = pycountry.currencies.get(alpha_3 = three)
-        if country == "USA":
-            warning = "N/A"
-        #else:
-        #   request.
         html = country_template.render({
             "name" : country,
             "currency" : currency,
+            "rating" : rating
+            "warning" : warning
+            "learn_more" : learn_more
         })
         self.response.write(html)
 
