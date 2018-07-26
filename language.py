@@ -20,6 +20,7 @@ class Translation(webapp2.RequestHandler):
         #find a way to make dest = alpha_2
         content = translator.translate(content, dest= alpha_2)
         html = trans_template.render({
+            "alpha_2" : alpha_2,
             "content" : content,
         })
         self.response.write(html)

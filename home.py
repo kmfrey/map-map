@@ -26,15 +26,15 @@ json_2 = json.loads(r_c.text)
 
 
 class CountryHandler(webapp2.RequestHandler):
-    def get(self, country):
+    def get(self, country_ab):
         country_template = jinja_env.get_template("templates/country.html")
-        country = self.request.get("Countries")
+        country_ab = self.request.get("Countries")
 
-        c = pycountry.countries.get(alpha_2 = country)
+        c = pycountry.countries.get(alpha_2 = country_ab)
 
-        r = requests.get("https://www.reisewarnung.net/api?country=" + country, verify=False)
+        r = requests.get("https://www.reisewarnung.net/api?country=" + country_ab, verify=False)
 
-         json1 = json.loads(r.text)
+        json1 = json.loads(r.text)
         rating = json1["data"]["situation"]["rating"]
         warning = json1["data"]["lang"]["en"]["advice"]
         learn_more = json1["data"]["lang"]["en"]["url_details"]
