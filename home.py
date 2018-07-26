@@ -60,9 +60,10 @@ class CountryHandler(webapp2.RequestHandler):
 
 
 
-class TestHandler(webapp2.RequestHandler):
-    def get(self):
-         self.response.write("hello test")
+
+#class TestHandler(webapp2.RequestHandler):
+#    def get(self):
+#         self.response.write("hello test")
 
 # class FormHandler(webapp2.RequestHandler):
 #     def get(self):
@@ -73,7 +74,12 @@ class TestHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/country/(.*)', CountryHandler),
     ('/', MapHandler),
+<<<<<<< HEAD
     ('/test', TestHandler),
+    ('/translate/(.*)', language.Translation),
+=======
+    #('/test', TestHandler),
     ('/translate', language.Translation),
+>>>>>>> dc29b98e1575386f31a4b106687f266f380c61b1
     #('/form', FormHandler),
 ])

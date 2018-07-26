@@ -12,18 +12,18 @@ from googletrans import Translator
 
 #this handler takes text -from translate.html- and gives it the variable "content" --> translator.translate will translate "content"
 class Translation(webapp2.RequestHandler):
-    def get(self):
+    def get(self, alpha_2):
         translator = Translator()
         trans_template = jinja_env.get_template("templates/translate.html")
         content = self.request.get("content")
-        content = translator.translate(content, dest= 'es')
+        # dest is a variable for the country's abbreviation
+        #find a way to make dest = alpha_2
+        content = translator.translate(content, dest= alpha_2)
         html = trans_template.render({
             "content" : content,
         })
-        # dest is a variable for the country's abbreviation
-
         self.response.write(html)
-         #alpha_2 from pycountry
+
 
 #if original plan to translate doesn't work, just use this
     # translator = Translator(service_urls=[
