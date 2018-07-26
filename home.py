@@ -29,9 +29,9 @@ class CountryHandler(webapp2.RequestHandler):
         html = country_template.render({
             "name" : country,
             "currency" : currency,
-            "rating" : rating,
-            "warning" : warning,
-            "learn_more" : learn_more,
+            "rating" : german.Constants.rating,
+            "warning" : german.Constants.warning,
+            "learn_more" : german.Constants.learn_more,
         })
         self.response.write(html)
 
