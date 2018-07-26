@@ -24,7 +24,7 @@ class CountryHandler(webapp2.RequestHandler):
 
         c = pycountry.countries.get(name = country)
         currency_get = c.numeric
-        two = c.alpha_2
+        country_name = c.name
         currency = pycountry.currencies.get(numeric = currency_get)
         html = country_template.render({
             "name" : country,
