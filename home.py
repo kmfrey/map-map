@@ -6,6 +6,7 @@ import language
 import requests_toolbelt
 import requests
 import json
+import csv
 import requests_toolbelt.adapters.appengine
 requests_toolbelt.adapters.appengine.monkeypatch()
 
@@ -31,6 +32,13 @@ class CountryHandler(webapp2.RequestHandler):
         country_ab = self.request.get("Countries")
 
         c = pycountry.countries.get(alpha_2 = country_ab)
+
+        language = ""
+        with open("countryInfo.txt") as tsv:
+            for line in csv.reader(tsv, dialect="excel-tab"):
+                if line[0]== country_ab.upper():
+                    language = line[15].split(',')[0][:2]
+
 
         r = requests.get("https://www.reisewarnung.net/api?country=" + country_ab, verify=False)
 
@@ -68,6 +76,7 @@ class CountryHandler(webapp2.RequestHandler):
             lat = 0
             long = 0
 
+        #language = pycountry.languages.get(alpha_2 = country_ab)
         html = country_template.render({
             "name" : country_name,
             "currency" : currency_name,
@@ -75,7 +84,8 @@ class CountryHandler(webapp2.RequestHandler):
             "warning" : warning,
             "learn_more" : learn_more,
             "lat" : lat,
-            "long" : long
+            "long" : long,
+            "alpha_2" : language,
         })
         self.response.write(html)
 
