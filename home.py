@@ -85,7 +85,5 @@ class CountryHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/country?(.*)', CountryHandler),
     ('/', MapHandler),
-    ('/translate/(.*)', language.Translation),
-    #('/form', FormHandler),
-
+    ('/translate/(.*)', language.Translation)
 ])
