@@ -11,9 +11,10 @@ r = requests.get("https://www.reisewarnung.net/api?country=US" # +alpha_2
 
 json1 = json.loads(r.text)
 
-rating = json1["data"]["situation"]["rating"]
-warning = json1["data"]["lang"]["en"]["advice"]
-learn_more = json1["data"]["lang"]["en"]["url_details"]
+class Constants:
+    rating = json1["data"]["situation"]["rating"]
+    warning = json1["data"]["lang"]["en"]["advice"]
+    learn_more = json1["data"]["lang"]["en"]["url_details"]
 
 
 dolla = pycountry.currencies.get(name = "US Dollar")

@@ -15,11 +15,15 @@ class Translation(webapp2.RequestHandler):
     def get(self):
         translator = Translator()
         trans_template = jinja_env.get_template("templates/translate.html")
+        content = self.request.get("content")
+        content = translator.translate(content, dest= 'es')
         html = trans_template.render({
-            "content" : self.request.get("content")
+            "content" : content,
         })
         # dest is a variable for the country's abbreviation
-        translator.translate(content, dest) #alpha_2 from pycountry
+
+        self.response.write(html)
+         #alpha_2 from pycountry
 
 #if original plan to translate doesn't work, just use this
     # translator = Translator(service_urls=[
