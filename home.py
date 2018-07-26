@@ -34,7 +34,7 @@ class CountryHandler(webapp2.RequestHandler):
 
         r = requests.get("https://www.reisewarnung.net/api?country=" + country, verify=False)
 
-         json1 = json.loads(r.text)
+        json1 = json.loads(r.text)
         rating = json1["data"]["situation"]["rating"]
         warning = json1["data"]["lang"]["en"]["advice"]
         learn_more = json1["data"]["lang"]["en"]["url_details"]
