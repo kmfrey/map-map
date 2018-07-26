@@ -21,9 +21,6 @@ class MapHandler(webapp2.RequestHandler):
         self.response.write(html)
 
 
-r_c = requests.get("http://data.fixer.io/api/latest?access_key=f6857a4dc14c06a10a11b4acccd1ddec&base%20=USD")
-json_2 = json.loads(r_c.text)
-
 
 class CountryHandler(webapp2.RequestHandler):
     def get(self, country_ab):
@@ -33,6 +30,9 @@ class CountryHandler(webapp2.RequestHandler):
         c = pycountry.countries.get(alpha_2 = country_ab)
 
         r = requests.get("https://www.reisewarnung.net/api?country=" + country_ab, verify=False)
+        r_c = requests.get("http://data.fixer.io/api/latest?access_key=f6857a4dc14c06a10a11b4acccd1ddec&base%20=USD")
+        json2 = json.loads(r_c.text)
+        USD = json2["rates"]["USD"]
 
         json1 = json.loads(r.text)
         rating = json1["data"]["situation"]["rating"]
@@ -41,16 +41,16 @@ class CountryHandler(webapp2.RequestHandler):
         country_3 = c.alpha_3
         currency_get = c.numeric
         country_name = c.name
+
         try:
             currency = pycountry.currencies.get(numeric = currency_get)
-            currency_number = currency.alpha_3
+            currency_3 = currency.alpha_3
             currency_name = currency.name
+            foreign = json2["rates"][currency_3]
+            rate = float(foreign)/float(USD)
         except:
             currency_name = "not in this database"
-
-        rating = json1["data"]["situation"]["rating"]
-        warning = json1["data"]["lang"]["en"]["advice"]
-        learn_more = json1["data"]["lang"]["en"]["url_details"]
+            rate = "unfortunately"
 
         if country_ab == "US":
             lat = 38.89378
@@ -78,7 +78,9 @@ class CountryHandler(webapp2.RequestHandler):
             "warning" : warning,
             "learn_more" : learn_more,
             "lat" : lat,
-            "long" : long
+            "long" : long,
+            'usd' : USD,
+            'rate' : rate,
         })
         self.response.write(html)
 
