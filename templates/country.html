@@ -9,27 +9,28 @@
   <body>
     <h1> {{ name }} Travel Guide</h1>
 
-    <p1> Currently in {{name}} they are expierencing a {{ rating }} on the safety
-         rating scale. The adive is: {{warning}}. A rating of zero means
-         that the country is completely safe and a rating of five means it is a no visit zone. </p1>
+    <p id="first"> Currently in {{name}} they are expierencing a {{ rating }} on the safety
+         rating scale. The advice is: {{warning}}. </p>
+    <p id="explain"> A rating of zero means that the country is completely safe and a rating of five means it is a no visit zone. </p>
 
-    <p2> If you are looking to know more about {{name}} and the situation visit {{learn_more}} .  </p2>
-    <p2>
+    <p id="more"> If you are looking to know more about {{name}} and the situation visit {{learn_more}} .  </p>
     <div id="map"></div>
     <div>
       <iframe src = "/translate/{{ alpha_2 }}"></iframe>
     </div>
+    <button id= "home" type = submit> Back to Home </button>
+    <button id= "translate" type = submit> Translate </button>
     <script>
-      var map;
+      var map
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: {{ lat }}, lng: {{ long }},
           zoom: 8
         });
       }
+
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzngbAnKA7wkJDMfS2VrY4sy2TY7lEWhk&callback=initMap"
     async defer></script>
-    <p><a href="/">Back to world map !!!!!!</a></p>
   </body>
 </html>
