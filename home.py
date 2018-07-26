@@ -55,6 +55,6 @@ app = webapp2.WSGIApplication([
     ('/country/(.*)', CountryHandler),
     ('/', MapHandler),
     ('/test', TestHandler),
-    ('/translate', language.Translation),
+    ('/translate/(.*)', language.Translation),
     #('/form', FormHandler),
 ])

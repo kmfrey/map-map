@@ -1,14 +1,18 @@
+<!-- This is the html page that makes a form box -called content- where user inputs text which is
+ translated using googletrans in language.py -->
+
 <html>
   <head>
     <title></title>
   </head>
   <body>
-    <form action="/translate" method='get'>
+    <form action="/translate/{{ alpha_2 }}" method='get'>
       <div> Content: <input type = "text" name = "content"></div>
       <input type = "submit" value= "Translate">
     </form>
     <div>
-      [{{ content. text }} {{content.pronunciation}}]  
+      [{{ content.text }}
+      {{content.pronunciation}}]
     </div>
   </body>
 </html>
