@@ -26,7 +26,7 @@ json_2 = json.loads(r_c.text)
 
 
 class CountryHandler(webapp2.RequestHandler):
-    def get(self, country):
+    def get(self, country_ab):
         country_template = jinja_env.get_template("templates/country.html")
         country_ab = self.request.get("Countries")
 
