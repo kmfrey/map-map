@@ -52,6 +52,21 @@ class CountryHandler(webapp2.RequestHandler):
             "rating" : Constants.rating,
             "warning" : Constants.warning,
             "learn_more" : Constants.learn_more,
+            if country = "US":
+                "lat" : 38.89378,
+                "long" : -77.15
+            elif country = "SG"
+                "lat" : 1.290270,
+                "long" : 103.851959
+            elif country = "SY"
+                "lat" : 33.510414,
+                "long" : 36.278336
+            elif country = "CU"
+                "lat" : 23.113592,
+                "long" : -82.366592
+            elif country = "NG"
+                "lat" : 9.072264,
+                "long" : 7.491302
         })
         self.response.write(html + country)
 
