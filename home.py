@@ -41,9 +41,12 @@ class CountryHandler(webapp2.RequestHandler):
         country_3 = c.alpha_3
         currency_get = c.numeric
         country_name = c.name
-        currency = pycountry.currencies.get(numeric = currency_get)
-        currency_number = currency.alpha_3
-        currency_name = currency.name
+        try:
+            currency = pycountry.currencies.get(numeric = currency_get)
+            currency_number = currency.alpha_3
+            currency_name = currency.name
+        except:
+            currency_name = "not in this database"
 
         rating = json1["data"]["situation"]["rating"]
         warning = json1["data"]["lang"]["en"]["advice"]
@@ -78,12 +81,6 @@ class CountryHandler(webapp2.RequestHandler):
             "long" : long
         })
         self.response.write(html)
-
-# class FormHandler(webapp2.RequestHandler):
-#     def get(self):
-#         form_template = jinja_env.get_template("template/orm.html")
-#         html = form_template.render()
-#         self.response.write(html)
 
 app = webapp2.WSGIApplication([
     ('/country?(.*)', CountryHandler),
