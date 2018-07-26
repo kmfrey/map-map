@@ -21,10 +21,10 @@ class MapHandler(webapp2.RequestHandler):
         self.response.write(html)
 
 
-class Constants:
-    rating = json1["data"]["situation"]["rating"]
-    warning = json1["data"]["lang"]["en"]["advice"]
-    learn_more = json1["data"]["lang"]["en"]["url_details"]
+# class Constants:
+#     rating = json1["data"]["situation"]["rating"]
+#     warning = json1["data"]["lang"]["en"]["advice"]
+#     learn_more = json1["data"]["lang"]["en"]["url_details"]
 
 r_c = requests.get("http://data.fixer.io/api/latest?access_key=f6857a4dc14c06a10a11b4acccd1ddec&base%20=USD")
 json_2 = json.loads(r_c.text)
@@ -46,33 +46,21 @@ class CountryHandler(webapp2.RequestHandler):
         currency = pycountry.currencies.get(numeric = currency_get)
         currency_number = currency.alpha_3
         currency_name = currency.name
+        rating = json1["data"]["situation"]["rating"]
+        warning = json1["data"]["lang"]["en"]["advice"]
+        learn_more = json1["data"]["lang"]["en"]["url_details"]
         html = country_template.render({
             "name" : country_name,
             "currency" : currency_name,
-            "rating" : Constants.rating,
-            "warning" : Constants.warning,
-            "learn_more" : Constants.learn_more,
+            "rating" : rating,
+            "warning" : warning,
+            "learn_more" : learn_more,
         })
         self.response.write(html + country)
-
-
-
-
-
-#class TestHandler(webapp2.RequestHandler):
-#    def get(self):
-#         self.response.write("hello test")
-
-# class FormHandler(webapp2.RequestHandler):
-#     def get(self):
-#         form_template = jinja_env.get_template("template/orm.html")
-#         html = form_template.render()
-#         self.response.write(html)
 
 app = webapp2.WSGIApplication([
     ('/country/(.*)', CountryHandler),
     ('/', MapHandler),
-    ('/test', TestHandler),
-    ('/translate/(.*)', language.Translation),
+    ('/translate/(.*)', language.Translation), #I don't think /(.*) would work
     #('/form', FormHandler),
 ])
