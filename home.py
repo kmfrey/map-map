@@ -17,9 +17,9 @@ class MapHandler(webapp2.RequestHandler):
         self.response.write(html)
 
 class CountryHandler(webapp2.RequestHandler):
-    def get(self,country):
+    def get(self, country):
         country_template = jinja_env.get_template("templates/country.html")
-        country = ""
+    #    country = ""
 ### why doesn't name = country workkkkk (ExistingCountries has not attribute alpha_3)
 
         c = pycountry.countries.get(name = country)
@@ -34,6 +34,11 @@ class CountryHandler(webapp2.RequestHandler):
             "learn_more" : german.Constants.learn_more,
         })
         self.response.write(html + country)
+        
+
+class TestHandler(webapp2.RequestHandler):
+    def get(self):
+         self.response.write("hello test")
 
 # class FormHandler(webapp2.RequestHandler):
 #     def get(self):
@@ -44,6 +49,7 @@ class CountryHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/country/(.*)', CountryHandler),
     ('/', MapHandler),
+    ('/test', TestHandler),
     ('/translate', language.Translation),
     #('/form', FormHandler),
 ])
