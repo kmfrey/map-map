@@ -18,15 +18,16 @@
     <div>
       <iframe src = "/translate"></iframe>
     </div>
+    <button id= "home" type = submit> Back to Home </button>
+    <button id= "translate" type = submit> Translate </button>
     <script>
-      var map;
+      var map
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: {{ lat }}, lng: {{ long }},
           zoom: 8
         });
       }
-    <button type = submit> Back to Home </button>
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzngbAnKA7wkJDMfS2VrY4sy2TY7lEWhk&callback=initMap"
