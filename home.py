@@ -22,9 +22,10 @@ class CountryHandler(webapp2.RequestHandler):
         country = ""
 ### why doesn't name = country workkkkk (ExistingCountries has not attribute alpha_3)
 
-        three = pycountry.countries.alpha_3.get(name = country)
-        two = pycountry.countries.alpha_2.get(name = country)
-        currency = pycountry.currencies.get(alpha_3 = three)
+        c = pycountry.countries.get(name = country)
+        currency_get = c.numeric
+        two = c.alpha_2
+        currency = pycountry.currencies.get(numeric = currency_get)
         html = country_template.render({
             "name" : country,
             "currency" : currency,
