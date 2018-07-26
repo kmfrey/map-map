@@ -41,9 +41,10 @@ class CurrencyHandler(webapp2.RequestHandler):
 
 
 
-class TestHandler(webapp2.RequestHandler):
-    def get(self):
-         self.response.write("hello test")
+
+#class TestHandler(webapp2.RequestHandler):
+#    def get(self):
+#         self.response.write("hello test")
 
 # class FormHandler(webapp2.RequestHandler):
 #     def get(self):
@@ -54,7 +55,7 @@ class TestHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/country/(.*)', CountryHandler),
     ('/', MapHandler),
-    ('/test', TestHandler),
+    #('/test', TestHandler),
     ('/translate', language.Translation),
     #('/form', FormHandler),
 ])
