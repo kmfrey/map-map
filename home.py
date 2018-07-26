@@ -88,12 +88,9 @@ class CountryHandler(webapp2.RequestHandler):
             "learn_more" : learn_more,
             "lat" : lat,
             "long" : long,
-<<<<<<< HEAD
             "alpha_2" : language,
-=======
             'usd' : USD,
             'rate' : rate,
->>>>>>> 09f6083b51a86f3cf17e34627d5201c28eaf3c5a
         })
         self.response.write(html)
 
