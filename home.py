@@ -19,16 +19,17 @@ class CountryHandler(webapp2.RequestHandler):
     def get(self):
         country_template = jinja_env.get_template("templates/country.html")
         country = "United States"
-        english = True
+### why doesn't name = country workkkkk (ExistingCountries has not attribute alpha_3)
+
         three = pycountry.countries.alpha_3.get(name = country)
         two = pycountry.countries.alpha_2.get(name = country)
         currency = pycountry.currencies.get(alpha_3 = three)
         html = country_template.render({
             "name" : country,
             "currency" : currency,
-            "rating" : rating
-            "warning" : warning
-            "learn_more" : learn_more
+            "rating" : rating,
+            "warning" : warning,
+            "learn_more" : learn_more,
         })
         self.response.write(html)
 
