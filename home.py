@@ -49,19 +49,19 @@ class CountryHandler(webapp2.RequestHandler):
         warning = json1["data"]["lang"]["en"]["advice"]
         learn_more = json1["data"]["lang"]["en"]["url_details"]
 
-        if country == "US":
+        if country_ab == "US":
             lat = 38.89378
             long = -77.15
-        elif country == "SG":
+        elif country_ab == "SG":
             lat = 1.290270
             long = 103.851959
-        elif country == "SY":
+        elif country_ab == "SY":
             lat = 33.510414
             long = 36.278336
-        elif country == "CU":
+        elif country_ab == "CU":
             lat = 23.113592
             long = -82.366592
-        elif country == "NG":
+        elif country_ab == "NG":
             lat = 9.072264
             long = 7.491302
         else:
@@ -77,7 +77,7 @@ class CountryHandler(webapp2.RequestHandler):
             "lat" : lat,
             "long" : long
         })
-        self.response.write(html + country)
+        self.response.write(html)
 
 # class FormHandler(webapp2.RequestHandler):
 #     def get(self):
