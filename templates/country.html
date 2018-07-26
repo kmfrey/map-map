@@ -1,7 +1,7 @@
 
 <html>
   <head>
-    <title>USA</title>
+    <title>{{name}}</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="../static/country.css">
@@ -15,7 +15,7 @@
 
     <p id="more"> If you are looking to know more about {{name}} and the situation visit {{learn_more}}.  </p>
 
-    <p id= "money"> The currency in {{ name }} is the {{ currency }}. </p>
+    <p id= "money"> The currency in {{ name }} is {{ currency }}. </p>
 
     <div id="map"></div>
     <div>
@@ -27,8 +27,8 @@
       var map
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 38.89378, lng: -77.15},
-          zoom: 8
+          center: {lat:{{lat}},lng:{{long}}},
+          zoom: 6
         });
       }
 
