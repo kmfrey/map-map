@@ -21,11 +21,6 @@ class MapHandler(webapp2.RequestHandler):
         self.response.write(html)
 
 
-class Constants:
-    rating = json1["data"]["situation"]["rating"]
-    warning = json1["data"]["lang"]["en"]["advice"]
-    learn_more = json1["data"]["lang"]["en"]["url_details"]
-
 r_c = requests.get("http://data.fixer.io/api/latest?access_key=f6857a4dc14c06a10a11b4acccd1ddec&base%20=USD")
 json_2 = json.loads(r_c.text)
 
@@ -40,6 +35,9 @@ class CountryHandler(webapp2.RequestHandler):
         r = requests.get("https://www.reisewarnung.net/api?country=" + country, verify=False)
 
         json1 = json.loads(r.text)
+        rating = json1["data"]["situation"]["rating"]
+        warning = json1["data"]["lang"]["en"]["advice"]
+        learn_more = json1["data"]["lang"]["en"]["url_details"]
         country_3 = c.alpha_3
         currency_get = c.numeric
         country_name = c.name
