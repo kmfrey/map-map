@@ -1,9 +1,13 @@
 import webapp2
 import jinja2
 import os
-import german
 import pycountry
 import language
+import requests_toolbelt
+import requests
+import json
+import requests_toolbelt.adapters.appengine
+requests_toolbelt.adapters.appengine.monkeypatch()
 
 jinja_env = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -16,28 +20,43 @@ class MapHandler(webapp2.RequestHandler):
         html = map_template.render()
         self.response.write(html)
 
+
+class Constants:
+    rating = json1["data"]["situation"]["rating"]
+    warning = json1["data"]["lang"]["en"]["advice"]
+    learn_more = json1["data"]["lang"]["en"]["url_details"]
+
+r_c = requests.get("http://data.fixer.io/api/latest?access_key=f6857a4dc14c06a10a11b4acccd1ddec&base%20=USD")
+json_2 = json.loads(r_c.text)
+
+
 class CountryHandler(webapp2.RequestHandler):
     def get(self, country):
         country_template = jinja_env.get_template("templates/country.html")
     #    country = ""
-### why doesn't name = country workkkkk (ExistingCountries has not attribute alpha_3)
 
         c = pycountry.countries.get(alpha_2 = country)
+
+        r = requests.get("https://www.reisewarnung.net/api?country=" + #check if alpha_2 or alpha_3
+        , verify=False)
+
+        json1 = json.loads(r.text)
+
         currency_get = c.numeric
         country_name = c.name
         currency = pycountry.currencies.get(numeric = currency_get)
+        currency_number = currency.alpha_3
+        currency_name = currency.name
         html = country_template.render({
             "name" : country_name,
-            "currency" : currency,
-            "rating" : german.Constants.rating,
-            "warning" : german.Constants.warning,
-            "learn_more" : german.Constants.learn_more,
+            "currency" : currency_name,
+            "rating" : Constants.rating,
+            "warning" : Constants.warning,
+            "learn_more" : Constants.learn_more,
         })
         self.response.write(html + country)
 
-class CurrencyHandler(webapp2.RequestHandler):
-    def get(self):
-        pass
+###insert into countryhandler
 
 
 
