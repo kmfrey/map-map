@@ -34,7 +34,9 @@ class CountryHandler(webapp2.RequestHandler):
             "learn_more" : german.Constants.learn_more,
         })
         self.response.write(html + country)
-
+class CurrencyHandler(webapp2.RequestHandler):
+    def get(self):
+        pass
 # class FormHandler(webapp2.RequestHandler):
 #     def get(self):
 #         form_template = jinja_env.get_template("template/orm.html")
