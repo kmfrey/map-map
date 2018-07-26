@@ -37,8 +37,7 @@ class CountryHandler(webapp2.RequestHandler):
 
         c = pycountry.countries.get(alpha_2 = country)
 
-        r = requests.get("https://www.reisewarnung.net/api?country=" + country
-        , verify=False)
+        r = requests.get("https://www.reisewarnung.net/api?country=" + country, verify=False)
 
         json1 = json.loads(r.text)
         country_3 = c.alpha_3
@@ -56,7 +55,6 @@ class CountryHandler(webapp2.RequestHandler):
         })
         self.response.write(html + country)
 
-###insert into countryhandler
 
 
 
