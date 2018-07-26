@@ -45,26 +45,29 @@ class CountryHandler(webapp2.RequestHandler):
         currency_number = currency.alpha_3
         currency_name = currency.name
         if country == "US":
-            lat = 38.89378,
+            lat = 38.89378
             long = -77.15
         elif country == "SG":
-            lat = 1.290270,
+            lat = 1.290270
             long = 103.851959
         elif country == "SY":
-            lat = 33.510414,
+            lat = 33.510414
             long = 36.278336
         elif country == "CU":
-            lat = 23.113592,
+            lat = 23.113592
             long = -82.366592
         elif country == "NG":
-            lat = 9.072264,
+            lat = 9.072264
             long = 7.491302
+        else:
+            lat = 0
+            long = 0
         html = country_template.render({
             "name" : country_name,
             "currency" : currency_name,
-            "rating" : Constants.rating,
-            "warning" : Constants.warning,
-            "learn_more" : Constants.learn_more,
+            "rating" : rating,
+            "warning" : warning,
+            "learn_more" : learn_more,
             "lat" : lat,
             "long" : long
         })
@@ -77,7 +80,7 @@ class CountryHandler(webapp2.RequestHandler):
 #         self.response.write(html)
 
 app = webapp2.WSGIApplication([
-    ('/country/(.*)', CountryHandler),
+    ('/country?(.*)', CountryHandler),
     ('/', MapHandler),
     ('/translate/(.*)', language.Translation),
     #('/form', FormHandler),
