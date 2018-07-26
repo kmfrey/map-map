@@ -19,7 +19,7 @@ class Translation(webapp2.RequestHandler):
             "content" : self.request.get("content")
         })
         # dest is a variable for the country's abbreviation
-        translator.translate(content, dest) #alpha_3 from pycountry
+        translator.translate(content, dest) #alpha_2 from pycountry
 
 #if original plan to translate doesn't work, just use this
     # translator = Translator(service_urls=[

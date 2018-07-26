@@ -3,6 +3,7 @@ import jinja2
 import os
 import german
 import pycountry
+import language
 
 jinja_env = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -42,5 +43,6 @@ class CountryHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/USA', CountryHandler),
     ('/', MapHandler),
+    ('/translate', language.Translation),
     #('/form', FormHandler),
 ])
