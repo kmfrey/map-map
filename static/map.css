@@ -1,0 +1,64 @@
+
+
+body{
+  backgroundcolor: lightblue;
+}
+h1{
+  textcenter
+}
+.dropbtn {
+    backgroundcolor: #4CAF50;
+    color: white;
+    padding: 15px;
+    fontsize: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+#basic{
+
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    backgroundcolor: #3e8e41;
+}
+
+#myInput {
+    borderbox: boxsizing;
+    backgroundimage: url('searchicon.png');
+    backgroundposition: 14px 12px;
+    backgroundrepeat: norepeat;
+    fontsize: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    borderbottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+    position: relative;
+    display: inlineblock;
+}
+
+.dropdowncontent {
+    display: none;
+    margintop: 85px;
+    position: fixed;
+    backgroundcolor: #f6f6f6;
+    minwidth: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    zindex: 1;
+}
+
+.dropdowncontent a {
+    color: black;
+    padding: 12px 16px;
+    textdecoration: none;
+    display: block;
+}
+
+.dropdown a:hover {backgroundcolor: #ddd;}
+
+.show {display: block;}
