@@ -35,7 +35,7 @@ html, body {
 }
 #explain{
   background-color: white;
-  text-align: center;
+  text-align: left;
   font-size: 30px;
   color : forestgreen;
   font : trebuchet;
@@ -43,21 +43,21 @@ html, body {
 
 #more{
   background-color: white;
-  text-align: center;
+  text-align: left;
   font-size: 30px;
   color : forestgreen;
   font : trebuchet;
 }
 #money{
   background-color: white;
-  text-align: center;
+  text-align: left;
   font-size: 30px;
   color : forestgreen;
   font : trebuchet;
 }
 #convert{
   background-color: white;
-  text-align: center;
+  text-align: left;
   font-size: 30px;
   color : forestgreen;
   font : trebuchet;
