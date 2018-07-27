@@ -1,7 +1,7 @@
 #map {
   width: 30%;
   height: 40%;
-  position: absolute;
+  position: static;
   margin-left: 1%;
   display: flex;
   flex-direction: column;
