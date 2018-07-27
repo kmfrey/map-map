@@ -1,10 +1,8 @@
 #map {
   width: 30%;
   height: 40%;
-  position: fixed;
+  position: static;
   margin-left: 1%;
-  margin-bottom: 5%;
-  overflow: scroll;
   display: flex;
   flex-direction: column;
 
