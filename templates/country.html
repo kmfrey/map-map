@@ -18,12 +18,12 @@
     <p id= "money"> The currency in {{ name }} is {{ currency }}. </p>
     <p id= "convert"> One USD is  {{ rate }} {{ currency }}. </p>
     <p> {{ foreign }} </p>
-    <div id="map"></div>
+    <div id= "map" ></div>
     <div>
       <iframe src = "/translate/{{ alpha_2 }}"></iframe>
     </div>
-    <button id= "home" type = submit> Back to Home </button>
-    <button id= "translate" type = submit> Translate </button>
+  <button id = "damn" onclick="goBack()">Go Back</button>
+
     <script>
       var map
       function initMap() {
@@ -32,7 +32,9 @@
           zoom: 6
         });
       }
-
+      function goBack() {
+          window.history.back();
+      }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzngbAnKA7wkJDMfS2VrY4sy2TY7lEWhk&callback=initMap"
     async defer></script>
