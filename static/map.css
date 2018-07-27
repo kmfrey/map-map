@@ -1,16 +1,19 @@
 
 
 body{
-  backgroundcolor: lightblue;
+  background-color: lightblue;
 }
-h1{
-  textcenter
+h1 {
+  font-size: 48px;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+
 }
 .dropbtn {
-    backgroundcolor: #4CAF50;
+    background-color: #4CAF50;
     color: white;
     padding: 15px;
-    fontsize: 16px;
+    font-size: 16px;
     border: none;
     cursor: pointer;
 }
@@ -20,15 +23,13 @@ h1{
 }
 
 .dropbtn:hover, .dropbtn:focus {
-    backgroundcolor: #3e8e41;
+    background-color: #3e8e41;
 }
 
 #myInput {
-    borderbox: boxsizing;
-    backgroundimage: url('searchicon.png');
-    backgroundposition: 14px 12px;
-    backgroundrepeat: norepeat;
-    fontsize: 16px;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    font-size: 16px;
     padding: 14px 20px 12px 45px;
     border: none;
     borderbottom: 1px solid #ddd;
