@@ -42,7 +42,8 @@ p{
 #first{
   text-align: center;
   font-size: 20px;
-  color : forestgreen;
+  color : #cc5500;
+  font-weight: bold;
 }
 #explain{
   font-size: 20px;
