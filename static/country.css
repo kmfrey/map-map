@@ -37,6 +37,8 @@ p{
 }
 #explain{
   background-color: white;
+  text-align: center;
+  font-size: 30px;
   font-size: 20px;
   text-align: left;
   color : forestgreen;
@@ -46,6 +48,7 @@ p{
 #more{
   background-color: white;
   text-align: center;
+  font-size: 30px;
   font-size: 20px;
   text-align: left;
   color : forestgreen;
@@ -53,13 +56,19 @@ p{
 }
 #money{
   background-color: white;
+  text-align: center;
+  font-size: 30px;
+
   font-size: 20px;
   text-align: left;
+
   color : forestgreen;
   font : trebuchet;
 }
 #convert{
   background-color: white;
+  text-align: center;
+  font-size: 30px;
   font-size: 20px;
   text-align: left;
   color : forestgreen;
