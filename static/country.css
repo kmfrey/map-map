@@ -1,3 +1,13 @@
+#map {
+  width: 30%;
+  height: 40%;
+  position: absolute;
+  margin-left: 1%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+
+}
 body {
   background-image: url(globe.png) ;
   background-size: cover;
@@ -40,7 +50,8 @@ p{
 #first{
   text-align: center;
   font-size: 20px;
-  color : forestgreen;
+  color : #cc5500;
+  font-weight: bold;
 }
 #explain{
   font-size: 20px;
