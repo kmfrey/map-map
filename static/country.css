@@ -3,6 +3,7 @@
   height: 50%;
   position: absolute;
   bottom: 0;
+  margin-left: 1%;
 
 }
 body {
@@ -27,6 +28,8 @@ p{
 #home {
   font-size: 14px;
   font-weight: bold;
+  margin-top: 20%;
+  margin-left: 50%;
 }
 #words {
   background-color : white;
@@ -40,35 +43,27 @@ p{
   color : forestgreen;
 }
 #explain{
-  text-align: center;
   font-size: 20px;
   text-align: left;
   color : forestgreen;
 }
 
 #more{
-  text-align: center;
   font-size: 20px;
   text-align: left;
   color : forestgreen;
 }
 #money{
-  text-align: center;
   font-size: 20px;
   text-align: left;
   color : forestgreen;
 }
 #convert{
-  text-align: center;
-  font-size: 30px;
   font-size: 20px;
   text-align: left;
   color : forestgreen;
  }
 
-#map{
-  padding : 5px;
-}
 
 #translate{
   bottom : 10px;
