@@ -20,6 +20,30 @@ html, body {
   padding: 0;
 }
 
+#damn {
+  position : fixed;
+  bottom:0;
+  right:0;
+}
+
+#first{
+  text-align: center;
+}
+#explain{
+  text-align: center;
+}
+
+#more{
+  text-align: center;
+}
+#money{
+  text-align: center;
+}
+#convert{
+  text-align: center;
+ }
+
+
 #translate{
   position: fixed;
   bottom : 10px;
