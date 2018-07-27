@@ -67,6 +67,18 @@ class CountryHandler(webapp2.RequestHandler):
         elif country_ab == "NG":
             lat = 9.072264
             long = 7.491302
+        elif country_ab == "AF":
+            lat = 34.55
+            long = 68.917
+        elif country_ab == "DE":
+            lat = 52.503
+            long = 12.303
+        elif country_ab == "SE":
+            lat = 59.32
+            long = 17.421  
+        elif country_ab == "MA":
+            lat = 33.969
+            long = -6.92
         else:
             lat = 0
             long = 0
