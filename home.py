@@ -46,11 +46,16 @@ class CountryHandler(webapp2.RequestHandler):
         r_c = requests.get("http://data.fixer.io/api/latest?access_key=f6857a4dc14c06a10a11b4acccd1ddec&base%20=USD")
         json2 = json.loads(r_c.text)
         USD = json2["rates"]["USD"]
+        try:
+            json1 = json.loads(r.text)
+            rating = json1["data"]["situation"]["rating"]
+            warning = json1["data"]["lang"]["en"]["advice"]
+            learn_more = json1["data"]["lang"]["en"]["url_details"]
+        except:
+            rating = "not available"
+            warning = "not available."
+            learn_more = ""
 
-        json1 = json.loads(r.text)
-        rating = json1["data"]["situation"]["rating"]
-        warning = json1["data"]["lang"]["en"]["advice"]
-        learn_more = json1["data"]["lang"]["en"]["url_details"]
         #Send(learn_more)
         # new_attempt = CamAttempt.query().get()
         country_3 = c.alpha_3

@@ -23,11 +23,21 @@ h1 {
 #basic{
 
 }
-
 .dropbtn:hover, .dropbtn:focus {
     background-color: #3e8e41;
 }
-
+select {
+  /* font-family: 'Raleway', sans-serif !important; */
+  font-size: 14px;
+  color: green !important;
+}
+button{
+  font-size: 14px;
+  color: green !important;
+}
+form {
+  margin-left: 33%;
+}
 #myInput {
     background-image: url('searchicon.png');
     background-position: 14px 12px;
