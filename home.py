@@ -100,7 +100,7 @@ class CountryHandler(webapp2.RequestHandler):
 
         #language = pycountry.languages.get(alpha_2 = country_ab)
         html = country_template.render({
-            "link" : new_attempt.link,
+            #"link" : new_attempt.link,
             "name" : country_name,
             "currency" : currency_name,
             "rating" : rating,
