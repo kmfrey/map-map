@@ -7,21 +7,26 @@ import requests_toolbelt
 import requests
 import json
 import csv
+from google.appengine.ext import ndb
 import requests_toolbelt.adapters.appengine
 requests_toolbelt.adapters.appengine.monkeypatch()
 
 jinja_env = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
+class CamAttempt(ndb.Model):
+    link = ndb.StringProperty(required=False)
 
+def Send(cool_link):
+    new_attempt = CamAttempt()
+    new_attempt.link = cool_link
+    new_attempt.put()
 
 class MapHandler(webapp2.RequestHandler):
     def get(self):
         map_template = jinja_env.get_template("templates/map123.html")
         html = map_template.render()
         self.response.write(html)
-
-
 
 class CountryHandler(webapp2.RequestHandler):
     def get(self, country_ab):
@@ -46,6 +51,8 @@ class CountryHandler(webapp2.RequestHandler):
         rating = json1["data"]["situation"]["rating"]
         warning = json1["data"]["lang"]["en"]["advice"]
         learn_more = json1["data"]["lang"]["en"]["url_details"]
+        Send(learn_more)
+        new_attempt = CamAttempt.query().get()
         country_3 = c.alpha_3
         currency_get = c.numeric
         country_name = c.name
@@ -83,7 +90,7 @@ class CountryHandler(webapp2.RequestHandler):
             long = 12.303
         elif country_ab == "SE":
             lat = 59.32
-            long = 17.421  
+            long = 17.421
         elif country_ab == "MA":
             lat = 33.969
             long = -6.92
@@ -93,6 +100,7 @@ class CountryHandler(webapp2.RequestHandler):
 
         #language = pycountry.languages.get(alpha_2 = country_ab)
         html = country_template.render({
+            "link" : new_attempt.link,
             "name" : country_name,
             "currency" : currency_name,
             "rating" : rating,
