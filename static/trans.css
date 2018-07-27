@@ -1,18 +1,31 @@
 body{
-  background-color: blue;
+  background-color: #3492DB;
   font-family: serif;
   align-self: center;
+  font-size: 20px;
 }
 
-#box{
-  align: center;
- }
-
 #contentText{
-
-  align: center;
+  background-color: purple;
+  color: white;
 }
 
 #submitBox{
+  background-color: red;
+}
 
+#textBox{
+    background-color: black;
+}
+
+#submitButton{
+  background-color: grey;
+  color: white;
+  font-family: serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+#translatedText{
+  background-color: pink;
 }
