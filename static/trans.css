@@ -52,7 +52,8 @@ hr {
   background-color: lightgrey;
   border-radius: 8px;
   margin-top: 1%;
-  align-self: center;
-  height: 40px;
-  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 30px;
+  width: 61%;
 }

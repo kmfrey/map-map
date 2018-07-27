@@ -61,7 +61,7 @@ class CountryHandler(webapp2.RequestHandler):
         country_3 = c.alpha_3
         currency_get = c.numeric
         country_name = c.name
-
+        
         try:
             currency = pycountry.currencies.get(numeric = currency_get)
             currency_3 = currency.alpha_3
