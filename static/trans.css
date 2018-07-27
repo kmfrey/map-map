@@ -1,4 +1,18 @@
- #box{
-   border: 25px "solid green";
-   text-align: right;
+body{
+  background-color: blue;
+  font-family: serif;
+  align-self: center;
+}
+
+#box{
+  align: center;
  }
+
+#contentText{
+
+  align: center;
+}
+
+#submitBox{
+
+}
