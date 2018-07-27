@@ -8,7 +8,7 @@
 
 }
 body {
-  background-image: url(globe.png) ;
+  background-image: url(passport.jpg) ;
   background-size: cover;
 }
 h1{
@@ -26,23 +26,13 @@ p{
   font-family: 'Raleway', sans-serif;
 }
 
-#map {
-  width: 30%;
-  height: 40%;
-  margin-bottom: 70%;
-  margin-left: 1%;
-  overflow: scroll;
-}
-
 #home {
   font-size: 14px;
   font-weight: bold;
-  margin-top: 20%;
   margin-left: 50%;
 }
 #words {
   background-color : white;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   padding: 3px
 }
 
