@@ -7,12 +7,12 @@
   </head>
   <body>
     <form id="box" action="/translate/{{ alpha_2 }}" method='get'>
-      <div id="contentText"> What do you want to translate? <input type = "text" name = "content"></div>
+      <div id="contentText"> What do you want to translate? <input id="textBox" type = "text" name = "content"></div>
       <div id="submitBox">
-        <input type = "submit" value= "Translate">
+        <input id="submitButton" type = "submit" value= "Translate">
       </div>
     </form>
-    <div>
+    <div id="translatedText">
       [{{ content.text }}
       {{content.pronunciation}}]
     </div>
