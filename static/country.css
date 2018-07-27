@@ -37,13 +37,10 @@ p{
 }
 #explain{
   background-color: white;
-<<<<<<< HEAD
   text-align: center;
   font-size: 30px;
-=======
   font-size: 20px;
   text-align: left;
->>>>>>> 81001cdeaba03ae31c5ca6e581dc17877e3bd957
   color : forestgreen;
   font : trebuchet;
 }
@@ -51,18 +48,14 @@ p{
 #more{
   background-color: white;
   text-align: center;
-<<<<<<< HEAD
   font-size: 30px;
-=======
   font-size: 20px;
   text-align: left;
->>>>>>> 81001cdeaba03ae31c5ca6e581dc17877e3bd957
   color : forestgreen;
   font : trebuchet;
 }
 #money{
   background-color: white;
-<<<<<<< HEAD
   text-align: center;
   font-size: 30px;
 
@@ -74,12 +67,10 @@ p{
 }
 #convert{
   background-color: white;
-<<<<<<< HEAD
   text-align: center;
   font-size: 30px;
   font-size: 20px;
   text-align: left;
->>>>>>> 81001cdeaba03ae31c5ca6e581dc17877e3bd957
   color : forestgreen;
   font : trebuchet;
  }
