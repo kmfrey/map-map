@@ -16,14 +16,13 @@
     <p id="more"> If you are looking to know more about {{name}} and the situation visit {{learn_more}}.  </p>
 
     <p id= "money"> The currency in {{ name }} is {{ currency }}. </p>
-    <p id= "convert"> One USD is  {{ rate }} {{ currency }}. </p>
+    <p id= "convert"> The conversion from one USD is  {{ rate }} {{ currency }}. </p>
     <p> {{ foreign }} </p>
     <div id="map"></div>
     <div>
       <iframe src = "/translate/{{ alpha_2 }}"></iframe>
     </div>
     <button id= "home" type = submit> Back to Home </button>
-    <button id= "translate" type = submit> Translate </button>
     <script>
       var map
       function initMap() {

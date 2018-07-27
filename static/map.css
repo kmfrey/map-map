@@ -7,6 +7,8 @@ h1 {
   font-size: 48px;
   font-family: 'Cinzel', serif;
   font-weight: bold;
+  text-align: center;
+
 
 }
 .dropbtn {
@@ -44,22 +46,21 @@ h1 {
 
 .dropdowncontent {
     display: none;
-    margintop: 85px;
+    margin-top: 85px;
     position: fixed;
-    backgroundcolor: #f6f6f6;
-    minwidth: 230px;
+    background-color: #f6f6f6;
+    min-width: 230px;
     overflow: auto;
     border: 1px solid #ddd;
-    zindex: 1;
+    z-index: 1;
 }
 
 .dropdowncontent a {
     color: black;
     padding: 12px 16px;
-    textdecoration: none;
     display: block;
 }
 
-.dropdown a:hover {backgroundcolor: #ddd;}
+.dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
