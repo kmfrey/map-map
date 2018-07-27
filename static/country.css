@@ -12,6 +12,7 @@ body {
 h1{
   text-align: center;
   color: blue;
+  font-family: 'Cinzel', serif;
 }
 /* Optional: Makes the sample page fill the window. */
 html, body {
@@ -19,24 +20,30 @@ html, body {
   margin: 0;
   padding: 0;
 }
+p{
+  font-family: 'Raleway', sans-serif;
 
-#damn {
-  position : fixed;
-  bottom:0;
-  right:0;
+}
+#home {
+
 }
 
 #first{
   text-align: center;
   background-color: white;
-  font-size: 30px;
+  font-size: 20px;
   color : forestgreen;
   font : trebuchet;
 }
 #explain{
   background-color: white;
+<<<<<<< HEAD
   text-align: center;
   font-size: 30px;
+=======
+  font-size: 20px;
+  text-align: left;
+>>>>>>> 81001cdeaba03ae31c5ca6e581dc17877e3bd957
   color : forestgreen;
   font : trebuchet;
 }
@@ -44,36 +51,43 @@ html, body {
 #more{
   background-color: white;
   text-align: center;
+<<<<<<< HEAD
   font-size: 30px;
+=======
+  font-size: 20px;
+  text-align: left;
+>>>>>>> 81001cdeaba03ae31c5ca6e581dc17877e3bd957
   color : forestgreen;
   font : trebuchet;
 }
 #money{
   background-color: white;
+<<<<<<< HEAD
   text-align: center;
   font-size: 30px;
+=======
+  font-size: 20px;
+  text-align: left;
+>>>>>>> 81001cdeaba03ae31c5ca6e581dc17877e3bd957
   color : forestgreen;
   font : trebuchet;
 }
 #convert{
   background-color: white;
+<<<<<<< HEAD
   text-align: center;
   font-size: 30px;
+=======
+  font-size: 20px;
+  text-align: left;
+>>>>>>> 81001cdeaba03ae31c5ca6e581dc17877e3bd957
   color : forestgreen;
   font : trebuchet;
  }
 
 
 #translate{
-  position: fixed;
   bottom : 10px;
   right: 110px;
   color : forestgreen;
-}
-
-
-#home {
-  position: fixed;
-  bottom : 10px;
-  right: 10px;
 }
