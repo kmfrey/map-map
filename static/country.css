@@ -1,14 +1,3 @@
-#map {
-  width: 30%;
-  height: 40%;
-  position: absolute;
-  bottom: 0;
-  margin-left: 1%;
-  overflow: scroll;
-  display: flex;
-  flex-direction: column;
-
-}
 body {
   background-image: url(globe.png) ;
   background-size: cover;
@@ -26,6 +15,14 @@ html, body {
 }
 p{
   font-family: 'Raleway', sans-serif;
+}
+
+#map {
+  width: 30%;
+  height: 40%;
+  margin-bottom: 70%;
+  margin-left: 1%;
+  overflow: scroll;
 }
 
 #home {
