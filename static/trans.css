@@ -1,4 +1,4 @@
  #box{
-   border: 25px solid green;
+   border: 25px "solid green";
    text-align: right;
  }
