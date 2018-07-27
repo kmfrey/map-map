@@ -22,10 +22,13 @@ html, body {
 }
 p{
   font-family: 'Raleway', sans-serif;
-
 }
+
 #home {
 
+}
+#words {
+  background-color : white;
 }
 
 #first{
