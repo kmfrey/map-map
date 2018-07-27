@@ -56,4 +56,7 @@ hr {
   margin-right: auto;
   height: 30px;
   width: 61%;
+  color: blue;
+  padding-left: 4px;
+  font-family:'Raleway', sans-serif;
 }

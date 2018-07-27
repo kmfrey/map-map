@@ -4,6 +4,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="../static/trans.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   </head>
   <body>
     <form id="box" action="/translate/{{ alpha_2 }}" method='get'>
@@ -15,10 +16,8 @@
     </form>
     <div id="translatedText">
       {{ content.text }}
-      <!-- <div >
-        {{content.pronunciation}}
-      </div> -->
     </div>
+    <!-- content.pronunciation -->
     <hr>
   </body>
 </html>
