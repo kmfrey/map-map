@@ -14,7 +14,6 @@ jinja_env = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 
-
 class MapHandler(webapp2.RequestHandler):
     def get(self):
         map_template = jinja_env.get_template("templates/map123.html")
@@ -83,7 +82,7 @@ class CountryHandler(webapp2.RequestHandler):
             long = 12.303
         elif country_ab == "SE":
             lat = 59.32
-            long = 17.421  
+            long = 17.421
         elif country_ab == "MA":
             lat = 33.969
             long = -6.92
