@@ -22,7 +22,7 @@ html, body {
 }
 p{
   font-family: 'Raleway', sans-serif;
-  
+
 }
 #home {
 
@@ -37,8 +37,8 @@ p{
 }
 #explain{
   background-color: white;
-  text-align: center;
   font-size: 20px;
+  text-align: left;
   color : forestgreen;
   font : trebuchet;
 }
@@ -47,20 +47,21 @@ p{
   background-color: white;
   text-align: center;
   font-size: 20px;
+  text-align: left;
   color : forestgreen;
   font : trebuchet;
 }
 #money{
   background-color: white;
-  text-align: center;
   font-size: 20px;
+  text-align: left;
   color : forestgreen;
   font : trebuchet;
 }
 #convert{
   background-color: white;
-  text-align: center;
   font-size: 20px;
+  text-align: left;
   color : forestgreen;
   font : trebuchet;
  }
