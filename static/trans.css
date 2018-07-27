@@ -52,5 +52,6 @@ hr {
   background-color: lightgrey;
   border-radius: 8px;
   margin-top: 1%;
+  align-self: center;
   height: 40px;
 }
